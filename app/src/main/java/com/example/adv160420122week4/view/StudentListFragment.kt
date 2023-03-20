@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -37,7 +36,7 @@ class StudentListFragment : Fragment() {
     }
 
     fun observeViewModel() {
-        //function 1, yaitu keitka dengan melakukan observation
+        //function 1, yaitu ketika dengan melakukan observation
         viewModel.studentsLD.observe(viewLifecycleOwner, Observer {
             studentListAdapter.updateStudentList(it)
         })
