@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.adv160420122week4.model.Student
 
 class DetailViewModel:ViewModel() {
-    private val studentLD = MutableLiveData<Student>()
+    val studentLD = MutableLiveData<Student>()
 
     fun fetch() {
         val student1 = Student("16055","Nonie","1998/03/28","5718444778",

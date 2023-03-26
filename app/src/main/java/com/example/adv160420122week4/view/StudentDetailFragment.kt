@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adv160420122week4.R
@@ -29,11 +30,13 @@ class StudentDetailFragment : Fragment() {
         viewModel.fetch()
 
         val txtID = view.findViewById<TextView>(R.id.txtID)
-
+        txtID.setText("16055")
         observeViewModel()
     }
 
     private fun observeViewModel() {
+        viewModel.studentLD.observe(viewLifecycleOwner, Observer {
 
+        })
     }
 }
