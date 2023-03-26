@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.adv160420122week4.R
 import com.example.adv160420122week4.model.Student
 
-class StudentListAdapter(val studentList:ArrayList<Student>)
+class StudentListAdapter(val studenList:ArrayList<Student>)
     :RecyclerView.Adapter<StudentListAdapter.StudentViewHolder>() {
     class StudentViewHolder(var view: View) : RecyclerView.ViewHolder(view)
 
@@ -21,16 +21,12 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         return StudentViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return studentList.size
-    }
-
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
         val txtID = holder.view.findViewById<TextView>(R.id.txtID)
-        txtID.text = studentList[position].id
+        txtID.text = studenList[position].id
 
         val txtName = holder.view.findViewById<TextView>(R.id.txtName)
-        txtName.text = studentList[position].name
+        txtName.text = studenList[position].name
 
         val btnDetail = holder.view.findViewById<Button>(R.id.btnDetail)
         btnDetail.setOnClickListener {
@@ -39,9 +35,13 @@ class StudentListAdapter(val studentList:ArrayList<Student>)
         }
     }
 
+    override fun getItemCount(): Int {
+        return studenList.size
+    }
+
     fun updateStudentList(newStudentList: ArrayList<Student>) {
-        studentList.clear()
-        studentList.addAll(newStudentList)
+        studenList.clear()
+        studenList.addAll(newStudentList)
         notifyDataSetChanged()
     }
 }
