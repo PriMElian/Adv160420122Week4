@@ -36,7 +36,8 @@ class StudentListFragment : Fragment() {
 
         observeViewModel()
     }
-
+    // Sedang mengamati object live data, apabila isi variable terjadi perubahan maka
+    //  dapat diamati
     private fun observeViewModel() {
         //function 1, yaitu ketika dengan melakukan observation
         viewModel.studentsLD.observe(viewLifecycleOwner, Observer {
