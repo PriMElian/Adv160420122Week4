@@ -33,7 +33,7 @@ class StudentListAdapter(val studenList:ArrayList<Student>)
 
         val btnDetail = holder.view.findViewById<Button>(R.id.btnDetail)
         btnDetail.setOnClickListener {
-            val action =StudentListFragmentDirections.actionStudentDetail()
+            val action =StudentListFragmentDirections.actionStudentDetail(studenList[position].id.toString())
             Navigation.findNavController(it).navigate(action)
         }
 
