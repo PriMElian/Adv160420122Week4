@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.adv160420122week4.R
+import com.example.adv160420122week4.util.loadImage
 import com.example.adv160420122week4.viewmodel.DetailViewModel
 
 class StudentDetailFragment : Fragment() {
@@ -35,10 +38,16 @@ class StudentDetailFragment : Fragment() {
             val txtName = view?.findViewById<TextView>(R.id.txtName)
             val txtBod = view?.findViewById<TextView>(R.id.txtBod)
             val txtPhone = view?.findViewById<TextView>(R.id.txtPhone)
+            val imgView = view?.findViewById<ImageView>(R.id.imageView2)
+            val progressbar = view?.findViewById<ProgressBar>(R.id.progressBar2)
+
             txtID?.setText(studentLD.id)
             txtName?.setText(studentLD.name)
             txtBod?.setText(studentLD.dob)
             txtPhone?.setText(studentLD.phone)
+            if (progressbar != null) {
+                imgView?.loadImage(studentLD.photoUrl, progressbar)
+            }
         })
     }
 }
