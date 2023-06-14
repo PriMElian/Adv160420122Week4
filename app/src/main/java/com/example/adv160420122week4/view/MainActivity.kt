@@ -8,6 +8,10 @@ import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.navigation.NavController
+import androidx.navigation.NavHost
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.adv160420122week4.R
 import com.example.adv160420122week4.util.createNotificationChannel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,7 +23,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
-    /*init {
+    init {
         instance = this;
     }
 
@@ -48,13 +52,13 @@ class MainActivity : AppCompatActivity() {
             }
             notificationManager.notify(1001, notificationBuilder.build())
         }
-    }*/
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_DEFAULT,
+        createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_DEFAULT,
             false, getString(R.string.app_name), "App notification channel.")
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
@@ -93,6 +97,6 @@ class MainActivity : AppCompatActivity() {
             subscribeOn(Schedulers.io())
             observeOn(AndroidSchedulers.mainThread())
             subscribe(observer)
-        }*/
+        }
     }
 }
